@@ -1,6 +1,6 @@
 # Zanclient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.8.
+Il progetto può essere lanciato con docker (cfr. rundocker.sh) oppure con angular cli `ng serve`
 
 ## Development server
 
