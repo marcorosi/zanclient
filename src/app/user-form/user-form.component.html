@@ -1,0 +1,32 @@
+<h1 mat-dialog-title *ngIf="model.id">Modifica utente</h1>
+<h1 mat-dialog-title *ngIf="!model.id">Creazione utente</h1>
+
+<form #myForm="ngForm" (ngSubmit)="save()">
+
+  <div mat-dialog-content class="form">
+
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="model.firstName" name="firstName" required minlength="2" maxlength="100">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Cognome</mat-label>
+      <input matInput [(ngModel)]="model.lastName" name="lastName" required minlength="2" maxlength="100">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" [(ngModel)]="model.email" name="email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+      <mat-error *ngIf="email.invalid">
+        L'indirizzo non è valido
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions>
+    <button type="button" color="primary" mat-button (click)="cancel()">Annulla</button>
+    <button type="submit" color="primary" mat-button [disabled]="!myForm.form.valid">Salva</button>
+  </div>
+
+</form>

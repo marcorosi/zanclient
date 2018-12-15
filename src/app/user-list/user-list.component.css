@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-column-id {
+  flex: 0 0 75px;
+}
+
+.mat-column-azioni {
+  width: 80px;
+}
