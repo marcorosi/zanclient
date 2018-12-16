@@ -1,5 +1,7 @@
-<mat-form-field>
+<mat-form-field class="search">
+  
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtra" #filtro>
+  <mat-icon matSuffix *ngIf="!filtro.value">search</mat-icon>
   <button mat-button *ngIf="filtro.value" matSuffix mat-icon-button aria-label="Reset" (click)="filtro.value=''; applyFilter('')">
     <mat-icon>close</mat-icon>
   </button>
