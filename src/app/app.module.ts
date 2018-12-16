@@ -52,6 +52,9 @@ import { UserListComponent } from './user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserFormComponent } from './user-form/user-form.component';
 
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+
 @NgModule({
   exports: [
     // CDK
@@ -109,7 +112,8 @@ export class MaterialModule { }
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   entryComponents: [UserListComponent, UserFormComponent],
   declarations: [AppComponent, UserListComponent, UserFormComponent],
