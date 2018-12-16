@@ -8,7 +8,7 @@ table {
 }
 
 .mat-column-id {
-  flex: 0 0 75px;
+  width: 60px;
 }
 
 .mat-column-azioni {
@@ -22,5 +22,29 @@ table {
 @media(min-width:768px) {
   .mat-column-email {
     display: table-cell;
+  }
+}
+
+@media(min-width:400px) {
+  .desktop {
+    display: initial;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media(max-width:399px) {
+  .mobile {
+    display: initial;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mat-column-azioni {
+    width: 40px;
   }
 }

@@ -58,6 +58,9 @@ export class UserListComponent implements OnInit {
   delete(row: User) {
     if (confirm(`Sei sicuro di voler cancellare l'utente ${row.firstName} ${row.lastName}`)) {
       this.service.delete(row.id).subscribe(() => {
+        this.snackBar.open('Operazione riuscita', undefined, {
+          duration: 3000, verticalPosition: 'top'
+        });
         this.load();
       });
     }
@@ -65,7 +68,7 @@ export class UserListComponent implements OnInit {
 
   private openForm(user: User) {
     const dialogRef = this.dialog.open(UserFormComponent, {
-      width: '60%',
+      width: '80vw',
     });
 
     dialogRef.componentInstance.user = user;
@@ -73,7 +76,7 @@ export class UserListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.snackBar.open('Salvataggio riuscito', undefined, {
-          duration: 3000,
+          duration: 3000, verticalPosition: 'top'
         });
         this.load();
       }

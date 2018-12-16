@@ -1,5 +1,5 @@
 <mat-form-field class="search">
-  
+
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtra" #filtro>
   <mat-icon matSuffix *ngIf="!filtro.value">search</mat-icon>
   <button mat-button *ngIf="filtro.value" matSuffix mat-icon-button aria-label="Reset" (click)="filtro.value=''; applyFilter('')">
@@ -34,17 +34,32 @@
         <button mat-mini-fab color="primary" type="button" (click)="add()" title="Aggiungi nuovo">
           <mat-icon class="md-24">add</mat-icon>
         </button>
-        <button mat-icon-button color="primary" type="button" (click)="load()" title="Ricarica i dati">
+        <button mat-icon-button class="desktop" color="primary" type="button" (click)="load()" title="Ricarica i dati">
           <mat-icon class="md-24">replay</mat-icon>
         </button>
       </th>
       <td mat-cell *matCellDef="let row">
-        <button mat-icon-button color="primary" (click)="edit(row)" title="Modifica">
-          <mat-icon class="md-24">edit</mat-icon>
-        </button>
-        <button mat-icon-button color="primary" (click)="delete(row)" title="Rimuovi">
-          <mat-icon class="md-24">delete</mat-icon>
-        </button>
+        <span class="desktop">
+          <button mat-icon-button color="primary" (click)="edit(row)" title="Modifica">
+            <mat-icon class="md-24">edit</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" (click)="delete(row)" title="Rimuovi">
+            <mat-icon class="md-24">delete</mat-icon>
+          </button>
+        </span>
+        <span class="mobile">
+          <button mat-icon-button color="primary" [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-icon-button color="primary" (click)="edit(row)" title="Modifica">
+              <mat-icon class="md-24">edit</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" (click)="delete(row)" title="Rimuovi">
+              <mat-icon class="md-24">delete</mat-icon>
+            </button>
+          </mat-menu>
+        </span>
       </td>
     </ng-container>
 
