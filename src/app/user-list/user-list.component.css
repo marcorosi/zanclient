@@ -14,3 +14,13 @@ table {
 .mat-column-azioni {
   width: 80px;
 }
+
+.mat-column-email {
+  display: none;
+}
+
+@media(min-width:768px){
+  .mat-column-email {
+    display: table-cell;
+  }
+}
