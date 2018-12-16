@@ -4,9 +4,9 @@ Il progetto può essere lanciato con un'immagine docker già pronta su Docker Hu
 
 `./rundocker.sh`
 
-oppure in locale con gradle:
+oppure in locale con Angular CLI:
 
 `ng serve`
 
-L'applicazione sarà disponibile (a meno di variazioni alle porta) all'url http://localhost:4200/
+L'applicazione sarà disponibile (a meno di variazioni alla porta) all'url http://localhost:4200/
 
